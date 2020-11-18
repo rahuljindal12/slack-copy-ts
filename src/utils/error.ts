@@ -15,15 +15,13 @@ function stringifyErrorValue(err: Error) {
  *
  * @param errorDescription
  * @param err
- *
- * @return {string}
  */
-export function stringifyError(errorDescription: string, err: any) {
+export function stringifyError(errorDescription: string, err: any): string {
   return `${errorDescription}\n${
     err instanceof Error
       ? stringifyErrorValue(err)
       : err
-      ? '' + err
+      ? `${err}`
       : '(missing error information)'
   }`;
 }
